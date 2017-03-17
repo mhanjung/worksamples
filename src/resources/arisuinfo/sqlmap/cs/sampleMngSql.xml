@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="sampleMng">
+
+    <typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap" />
+    <typeAlias alias="SampleMngVO" type="csMng.service.SampleMngVO" />
+
+    <select id="sampleMngDAO.searchSample" parameterClass="SampleMngVO" resultClass="egovMap">
+        SELECT  A.RCPT_REQU_NO
+             ,  A.RCPT_STTS_CD
+             ,  FN_GET_CD_NM('CS046', A.RCPT_STTS_CD) AS STTS_NM
+             ,  A.HHLD_ESNTL_SEQN
+             ,  A.RCPT_ESNTL_SEQN
+             ,  A.TEL
+             ,  A.MTEL
+             ,  A.DSPTH_DE
+             ,  A.RCPT_APRP_DE
+             ,  A.APP_DDT_DE
+             ,  A.QUALF_FRF_DE
+             ,  A.MVT_DE
+             ,  A.MKEY
+             ,  A.RCPT_EXCL_RSN
+             ,  A.EXCL_APP_DDT_DE
+             ,  A.RM
+             ,  B.HD_CO
+             ,  B.TPR_HD_CO
+             ,  A.REG_DT
+             ,  A.REGER_ID
+             ,  A.UPD_DT
+             ,  A.UPDER_ID
+             ,  FN_GET_NM(HHLD_ESNTL_SEQN) AS HHLD_NM
+             ,  FN_GET_IDTT_NO(HHLD_ESNTL_SEQN) AS HHLD_IDTT_NO
+             ,  FN_GET_NM(RCPT_ESNTL_SEQN) AS RCPT_NM
+             ,  FN_GET_IDTT_NO(RCPT_ESNTL_SEQN) AS RCPT_IDTT_NO
+             ,  FN_GET_S_ADDR_DB(B.MKEY) AS ADDR
+          FROM  SAMPLE1 A
+              , SAMPLE2 B
+              , SAMPLE3 C
+              , SAMPLE4 D
+         WHERE  A.MKEY = B.MKEY
+           AND  A.HHLD_ESNTL_SEQN = C.ESNTL_SEQN
+           AND  A.RCPT_ESNTL_SEQN = D.ESNTL_SEQN
+        <isNotEmpty property="oficeCd"> 
+           AND  B.OFICE_CD = #oficeCd#
+        </isNotEmpty>
+        <isNotEmpty property="guCd">
+           AND  B.GU_CD = #guCd#
+        </isNotEmpty>
+        <isNotEmpty property="adstrdCdFrom"> 
+           AND  B.CS_NO_ADSTRD_CD &gt;= #adstrdCdFrom#
+        </isNotEmpty>
+        <isNotEmpty property="adstrdCdTo"> 
+           AND  B.CS_NO_ADSTRD_CD &lt;= #adstrdCdTo# 
+        </isNotEmpty>
+        <isNotEmpty property="mkey"> 
+           AND  A.MKEY = #mkey#
+        </isNotEmpty>
+        <isNotEmpty property="hhldNm">
+           AND  C.NM LIKE '%' || #hhldNm# || '%'
+        </isNotEmpty>
+        <isNotEmpty property="hhldIdttNo"> 
+           AND  C.IDTT_NO = #hhldIdttNo#
+        </isNotEmpty>
+        <isNotEmpty property="rcptNm">
+           AND  D.NM LIKE '%' || #rcptNm# || '%'
+        </isNotEmpty>
+        <isNotEmpty property="rcptIdttNo"> 
+           AND  D.IDTT_NO = #rcptIdttNo#
+        </isNotEmpty>
+        <isNotEmpty property="rcptAprpDeFrom">
+           AND  A.RCPT_APRP_DE &gt;= #rcptAprpDeFrom#
+        </isNotEmpty>
+        <isNotEmpty property="rcptAprpDeTo"> 
+           AND  A.RCPT_APRP_DE &lt;= #rcptAprpDeTo#
+        </isNotEmpty>
+        <isNotEmpty property="rcptSttsCd">
+           AND  A.RCPT_STTS_CD = #rcptSttsCd#
+        </isNotEmpty>
+        ORDER BY MKEY,RCPT_STTS_CD DESC
+    </select>
+
+    <insert id="sampleMngDAO.registSample">
+        INSERT
+          INTO  SAMPLE1 
+             (  RCPT_REQU_NO
+             ,  RCPT_STTS_CD
+             ,  HHLD_ESNTL_SEQN
+             ,  RCPT_ESNTL_SEQN
+             ,  TEL
+             ,  MTEL
+             ,  DSPTH_DE
+             ,  RCPT_APRP_DE
+             ,  APP_DDT_DE
+             ,  QUALF_FRF_DE
+             ,  MVT_DE
+             ,  MKEY
+             ,  RCPT_EXCL_RSN
+             ,  EXCL_APP_DDT_DE
+             ,  RM
+             ,  REG_DT
+             ,  REGER_ID
+             ,  UPD_DT
+             ,  UPDER_ID
+             ) 
+        VALUES 
+             (  (SELECT NVL(MAX(RCPT_REQU_NO) + 1,1) FROM SAMPLE1)
+             ,  #rcptSttsCd#
+             ,  #hhldEsntlSeqn#
+             ,  #rcptEsntlSeqn#
+             ,  #tel#
+             ,  #mtel#
+             ,  #dspthDe#
+             ,  #rcptAprpDe#
+             ,  #appDdtDe#
+             ,  #qualfFrfDe#
+             ,  #mvtDe#
+             ,  #mkey#
+             ,  #rcptExclRsn#
+             ,  #exclAppDdtDe#
+             ,  #rm#
+             ,  SYSDATE
+             ,  'SYSTEM'
+             ,  SYSDATE
+             ,  'SYSTEM'
+             ) 
+    </insert>
+
+    <update id="sampleMngDAO.modifySample">
+        UPDATE  SAMPLE1
+           SET  RCPT_STTS_CD    = #rcptSttsCd#
+             ,  TEL             = #tel#
+             ,  MTEL            = #mtel#
+             ,  DSPTH_DE        = #dspthDe#
+             ,  RCPT_APRP_DE    = #rcptAprpDe#
+             ,  APP_DDT_DE      = #appDdtDe#
+             ,  QUALF_FRF_DE    = #qualfFrfDe#
+             ,  MVT_DE          = #mvtDe#
+             ,  RCPT_EXCL_RSN   = #rcptExclRsn#
+             ,  EXCL_APP_DDT_DE = #exclAppDdtDe#
+             ,  RM              = #rm#
+             ,  UPD_DT          = SYSDATE
+             ,  UPDER_ID        = 'SYSTEM'
+         WHERE  RCPT_REQU_NO    = #rcptRequNo#
+    </update>
+
+
+    <update id="sampleMngDAO.modifyCsInfo">
+        UPDATE  SAMPLE2
+           SET  HD_CO           = #hdCo#
+             ,  TPR_HD_CO       = #tprHdCo#
+         WHERE  MKEY            = #mkey#
+    </update>
+
+    <select id="sampleMngDAO.searchChgHst" parameterClass="SampleMngVO" resultClass="egovMap">
+        SELECT  A.RCPT_ESNTL_SEQN
+             ,  A.SN
+             ,  A.CHG_DE
+             ,  FN_GET_CD_NM('CS046', A.CHG_SE_CD) AS CHG_SE_CD
+             ,  A.CHG_RSN
+             ,  A.TEL
+             ,  A.MKEY
+             ,  A.MTEL
+             ,  A.REG_DT
+             ,  A.REGER_ID
+          FROM  SAMPLE1_HST A
+             ,  SAMPLE3 B
+         WHERE  A.RCPT_ESNTL_SEQN = B.ESNTL_SEQN
+         <isNotEmpty property="rcptIdttNo"> 
+           AND  B.IDTT_NO = #rcptIdttNo#
+        </isNotEmpty>
+        <isNotEmpty property="chgDeFrom">
+           AND  A.CHG_DE &gt;= #chgDeFrom#
+        </isNotEmpty>
+        <isNotEmpty property="chgDeTo"> 
+           AND  A.CHG_DE &lt;= #chgDeTo#
+        </isNotEmpty>
+        ORDER BY RCPT_ESNTL_SEQN, SN DESC
+    </select>
+    
+    <insert id="sampleMngDAO.registChgHst">
+        INSERT
+          INTO  SAMPLE1_HST
+             (  RCPT_ESNTL_SEQN
+             ,  SN
+             ,  CHG_DE
+             ,  CHG_SE_CD
+             ,  CHG_RSN
+             ,  MKEY
+             ,  TEL
+             ,  MTEL
+             ,  REG_DT
+             ,  REGER_ID
+             ) 
+        VALUES 
+             (  #rcptEsntlSeqn#
+             ,  (SELECT NVL(MAX(SN)+1,1) FROM SAMPLE1_HST WHERE RCPT_ESNTL_SEQN = #rcptEsntlSeqn#) 
+             ,  #chgDe#
+             ,  #rcptSttsCd#
+             ,  #chgRsn#
+             ,  #mkey#
+             ,  #tel#
+             ,  #mtel#
+             ,  SYSDATE
+             ,  'SYSTEM'
+             ) 
+    </insert>
+
+    <select id="sampleMngDAO.searchMkeySch" parameterClass="SampleMngVO" resultClass="egovMap">
+        SELECT  A.MKEY
+             ,  A.OFICE_CD
+             ,  A.GU_CD
+             ,  FN_GET_GU_NM(GU_CD) AS GU_NM
+             ,  A.RN
+             ,  A.UG_AT
+             ,  A.HD_CO
+             ,  A.TPR_HD_CO
+             ,  A.BLD_MNNM
+             ,  A.BLD_SLNO
+             ,  A.BLD_NM
+             ,  A.BLD_HO
+             ,  A.BLD_DONG
+             ,  A.LGDONG_CD
+             ,  FN_GET_B_DONG_NM(A.GU_CD, A.LGDONG_CD) AS LGDONG_NM
+             ,  B.ESNTL_SEQN
+             ,  FN_GET_NM(B.ESNTL_SEQN) AS NM
+             ,  A.MNNM
+             ,  A.SLNO
+             ,  A.MNTN
+             ,  A.SPCL_ADDR
+             ,  A.REG_DT
+             ,  A.REGER_ID
+             ,  A.UPD_DT
+             ,  A.UPDER_ID
+          FROM  SAMPLE4 B, SAMPLE2 A
+         WHERE  B.NOW_PAYER_AT='Y'
+         AND A.MKEY=B.MKEY
+        <isNotEmpty property="guCd"> 
+           AND  GU_CD = #guCd#
+        </isNotEmpty>
+        <isNotEmpty property="rn">
+           AND  RN LIKE '%' || #rn# || '%'
+        </isNotEmpty>
+        <isNotEmpty property="bldNm"> 
+           AND  BLD_NM LIKE '%' || #bldNm# || '%'
+        </isNotEmpty>
+        <isNotEmpty property="bldMnnm">
+           AND  BLD_MNNM = #bldMnnm#
+        </isNotEmpty>
+        <isNotEmpty property="bldSlno"> 
+           AND  BLD_SLNO = #bldSlno#
+        </isNotEmpty>
+        <isNotEmpty property="lgdongCd">
+           AND  LGDONG_CD = #lgdongCd#
+        </isNotEmpty>
+        <isNotEmpty property="mnnm"> 
+           AND  MNNM = #mnnm#
+        </isNotEmpty>
+        <isNotEmpty property="slno">
+           AND  SLNO = #slno#
+        </isNotEmpty>
+        <isNotEmpty property="spclAddr">
+           AND  SPCL_ADDR LIKE '%' || #spclAddr# || '%'
+        </isNotEmpty>
+        ORDER BY MKEY
+    </select>
+    
+    <select id="sampleMngDAO.searchEsntlSeqn" parameterClass="SampleMngVO" resultClass="egovMap">
+        SELECT  ESNTL_SEQN
+          FROM  SAMPLE3
+         WHERE  IDTT_NO  =  #idttNo#
+    </select>
+    
+    <insert id="sampleMngDAO.registEsntlSeqn">
+        INSERT
+          INTO  SAMPLE3 
+             (  ESNTL_SEQN
+             ,  IDTT_NO_SE
+             ,  IDTT_NO
+             ,  NM
+             ) 
+        VALUES 
+             (  (SELECT NVL(MAX(TO_NUMBER(ESNTL_SEQN)) + 1,1) FROM SAMPLE3)
+             ,  '01'
+             ,  #idttNo#
+             ,  #nm#
+             ) 
+    </insert>
+    
+    <select id="sampleMngDAO.searchRcptSttsCd" parameterClass="SampleMngVO" resultClass="egovMap">
+        SELECT  RCPT_STTS_CD
+          FROM  SAMPLE1
+         WHERE  RCPT_REQU_NO  =  #rcptRequNo#
+    </select>
+    
+    <select id="sampleMngDAO.searchTprHdCo" parameterClass="SampleMngVO" resultClass="egovMap">
+        SELECT  TPR_HD_CO
+          FROM  SAMPLE2
+         WHERE  MKEY  =  #mkey#
+    </select>
+    
+    <insert id="sampleMngDAO.registBsisDtChg">
+        INSERT
+          INTO  SAMPLE5 
+             (  MKEY
+             ,  CHG_SN
+             ,  WRITNG_DE
+             ,  CHG_APP_DE
+             ,  ECHG_CD
+             ,  CHG_BE_INFO
+             ,  CHG_AF_INFO
+             ,  ETC_VAL
+             ,  REG_DT
+             ,  REGER_ID
+             ) 
+        VALUES 
+             (  #mkey#
+             ,  (SELECT NVL(MAX(CHG_SN)+1,1) from SAMPLE5 WHERE MKEY = #mkey#) 
+             ,  (SELECT TO_CHAR(SYSDATE , 'YYYYMMDD') FROM DUAL)
+             ,  (SELECT TO_CHAR(SYSDATE , 'YYYYMMDD') FROM DUAL)
+             ,  '11'
+             ,  #chgBeInfo#
+             ,  #chgAfInfo#
+             ,  #rcptNm#||'('||#rcptDongHo#||')'
+             ,  SYSDATE
+             ,  'SYSTEM'
+             ) 
+    </insert>
+    
+</sqlMap>

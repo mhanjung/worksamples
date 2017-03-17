@@ -1,0 +1,1142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.4">
+  <TypeDefinition url="..\..\..\default_typedef.xml"/>
+  <Form id="csSampleMngF" classname="" inheritanceid="" position="absolute 0 0 955 750" titletext="SampleMng" onload="csSampleMngF_onload">
+    <Layouts>
+      <Layout>
+        <Static id="sta_WF_SearchBox" class="sta_WF_SearchBox" position="absolute 10 33 945 159"/>
+        <Button id="btn_Search" taborder="15" text="Search" class="btn_WFSA_Search2" position="absolute 853 126 925 148" onclick="btn_Search_onclick"/>
+        <Static id="sta_WF_TitleLev00" text="SampleMng" class="sta_WF_TitleLev1" position="absolute 10 16 240 30"/>
+        <Button id="btn_myMenu" taborder="49" text="MyMenu" position="absolute 879 10 945 27" style="font:Dotum,8;" onclick="btn_myMenu_onclick"/>
+        <Button id="btn_save" taborder="33" text="save" class="btn_WF_crud" position="absolute 895 716 945 740" onclick="btn_save_onclick"/>
+        <Static id="sta_WFSA_LabelP" text="office" wordwrap="none" class="sta_WFSA_LabelP" position="absolute 31 46 124 66"/>
+        <Combo id="cbo_srchOff" taborder="0" position="absolute 103 46 261 66" index="-1" onitemchanged="cbo_srchOff_onitemchanged"/>
+        <Edit id="edt_srchHhldNm" taborder="8" enable="true" position="absolute 373 73 517 93" lengthunit="utf8" imemode="hangul" autoselect="true" maxlength="21"/>
+        <Static id="Static04" class="sta_WFDA_Bg" position="absolute 10 585 945 705"/>
+        <Static id="Static00" text="member key" class="sta_WFDA_Label" position="absolute 32 595 105 615"/>
+        <Static id="Static15" text="household ID number" class="sta_WFDA_Label" position="absolute 701 622 806 642"/>
+        <Static id="Static18" text="household Name" class="sta_WFDA_Label" position="absolute 492 622 585 642"/>
+        <Static id="Static01" text="Tel" class="sta_WFDA_Label" position="absolute 492 649 585 669"/>
+        <Edit id="edt_tel" taborder="28" position="absolute 575 649 686 669" lengthunit="utf8" inputtype="digit" maxlength="20"/>
+        <Static id="Static02" text="Start Date" class="sta_WFDA_Label" position="absolute 31 649 124 669"/>
+        <Static id="sta_dongHo" text="DongHo" class="sta_WFDA_Label" position="absolute 701 596 794 616"/>
+        <Static id="sta_WFSA_LabelP02" text="household ID number" wordwrap="none" class="sta_WFSA_Label" position="absolute 544 73 647 93"/>
+        <Static id="sta_WFSA_LabelP01" text="status" wordwrap="none" class="sta_WFSA_Label" position="absolute 31 100 124 120"/>
+        <Combo id="cbo_srchStts" taborder="10" position="absolute 103 100 261 120" index="-1"/>
+        <Edit id="edt_mkey" taborder="39" position="absolute 116 595 185 615" lengthunit="utf8" maxlength="9" enable="false" inputtype="digit"/>
+        <Button id="btn_add" taborder="48" text="Add" class="btn_WF_crud" position="absolute 842 716 892 740" onclick="btn_add_onclick"/>
+        <Edit id="edt_srchGuNm" taborder="47" position="absolute 441 46 517 66" lengthunit="utf8" enable="false"/>
+        <Button id="btn_srchGuCd" taborder="2" class="btn_WFSA_Search" position="absolute 419 46 439 66" style="image:URL('img::ico_Search.png');" onclick="btn_srchGuCd_onclick"/>
+        <Edit id="edt_srchGuCd" taborder="1" position="absolute 373 46 417 66" lengthunit="utf8" maxlength="3" inputtype="digit" enable="true" autoselect="true" onkillfocus="edt_srchGuCd_onkillfocus"/>
+        <Static id="sta_WFSA_LabelP07" text="Gu Code" wordwrap="none" class="sta_WFSA_LabelP" position="absolute 292 45 353 65"/>
+        <Edit id="edt_srchAdstrdNmFrom" taborder="46" position="absolute 678 46 750 66" lengthunit="utf8" enable="false"/>
+        <Edit id="edt_srchAdstrdCdFrom" taborder="3" position="absolute 610 46 654 66" lengthunit="utf8" maxlength="3" inputtype="digit" enable="true" autoselect="true" onkillfocus="edt_srchAdstrdCdFrom_onkillfocus"/>
+        <Button id="btn_srchDongCdFrom" taborder="4" class="btn_WFSA_Search" position="absolute 656 46 676 66" style="image:URL('img::ico_Search.png');" onclick="btn_srchDongCdFrom_onclick"/>
+        <Static id="sta_WFSA_LabelP06" text="Dong Code" wordwrap="none" class="sta_WFSA_LabelP" position="absolute 543 45 596 65"/>
+        <Edit id="edt_srchAdstrdNmTo" taborder="45" position="absolute 845 46 925 66" lengthunit="utf8" enable="false"/>
+        <Edit id="edt_srchAdstrdCdTo" taborder="5" position="absolute 777 46 821 66" lengthunit="utf8" maxlength="3" inputtype="digit" enable="true" autoselect="true" onkillfocus="edt_srchAdstrdCdTo_onkillfocus"/>
+        <Button id="btn_srchDongCdTo" taborder="6" class="btn_WFSA_Search" position="absolute 823 46 843 66" style="image:URL('img::ico_Search.png');" onclick="btn_srchDongCdTo_onclick"/>
+        <Static id="Static08" text="~" position="absolute 759 45 774 65"/>
+        <Static id="sta_WFSA_LabelP08" text="Household Name" wordwrap="none" class="sta_WFSA_Label" position="absolute 291 72 374 92"/>
+        <Static id="Static10" text="~" position="absolute 317 127 332 147"/>
+        <Static id="sta_WFSA_LabelP05" text="Start Date" wordwrap="none" class="sta_WFSA_Label" position="absolute 31 127 124 147"/>
+        <Static id="sta_WFSA_LabelP00" text="member key" wordwrap="none" class="sta_WFSA_Label" position="absolute 31 72 114 92"/>
+        <Edit id="edt_srchMkey" taborder="7" position="absolute 103 73 261 93" lengthunit="utf8" maxlength="9" inputtype="digit" autoselect="true"/>
+        <Static id="sta_WFSA_LabelP03" text="" wordwrap="none" class="sta_WFSA_LabelP" position="absolute 31 165 544 185"/>
+        <Static id="Static03" text="House count" class="sta_WFDA_Label" position="absolute 247 595 308 615"/>
+        <Static id="Static07" text="mobile" class="sta_WFDA_Label" position="absolute 701 649 794 669"/>
+        <Static id="Static12" text="notice date" class="sta_WFDA_Label" position="absolute 247 649 340 669"/>
+        <Edit id="edt_dongHo" taborder="20" position="absolute 815 596 926 616" lengthunit="utf8"/>
+        <Button id="btn_mkeySch" taborder="17" text="Search" class="btn_WFSA_Search" position="absolute 187 595 237 615" onclick="btn_mkeySch_onclick" enable="false"/>
+        <Button id="btn_chgHst" taborder="44" text="Change History" class="btn_WF_crudL2" position="absolute 10 716 87 740" onclick="btn_chgHst_onclick"/>
+        <Edit id="edt_hdCo" taborder="18" position="absolute 355 595 474 615" lengthunit="utf8" enable="false" inputtype="digit" maxlength="9"/>
+        <Edit id="edt_mtel" taborder="29" position="absolute 815 649 926 669" lengthunit="utf8" inputtype="digit" maxlength="20"/>
+        <Edit id="edt_hhldNm" taborder="24" position="absolute 575 622 686 642" lengthunit="utf8" enable="false" imemode="hangul" maxlength="18"/>
+        <Grid id="GridSample" taborder="43" binddataset="ds_sample" style="align:center;" formats="&lt;Formats&gt;&#10;  &lt;Format id=&quot;default&quot;&gt;&#10;    &lt;Columns&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;      &lt;Col size=&quot;80&quot;/&gt;&#10;    &lt;/Columns&gt;&#10;    &lt;Rows&gt;&#10;      &lt;Row band=&quot;head&quot; size=&quot;24&quot;/&gt;&#10;      &lt;Row band=&quot;body&quot; size=&quot;24&quot;/&gt;&#10;    &lt;/Rows&gt;&#10;    &lt;Band id=&quot;head&quot;&gt;&#10;      &lt;Cell col=&quot;0&quot; disptype=&quot;normal&quot; text=&quot;rcptReqNo&quot;/&gt;&#10;      &lt;Cell col=&quot;1&quot; disptype=&quot;normal&quot; text=&quot;rm&quot;/&gt;&#10;      &lt;Cell col=&quot;2&quot; disptype=&quot;normal&quot; text=&quot;regDt&quot;/&gt;&#10;      &lt;Cell col=&quot;3&quot; disptype=&quot;normal&quot; text=&quot;regerId&quot;/&gt;&#10;      &lt;Cell col=&quot;4&quot; disptype=&quot;normal&quot; text=&quot;updDt&quot;/&gt;&#10;      &lt;Cell col=&quot;5&quot; disptype=&quot;normal&quot; text=&quot;upderId&quot;/&gt;&#10;      &lt;Cell col=&quot;6&quot; disptype=&quot;normal&quot; text=&quot;oficeCd&quot;/&gt;&#10;      &lt;Cell col=&quot;7&quot; disptype=&quot;normal&quot; text=&quot;adstrdCd&quot;/&gt;&#10;      &lt;Cell col=&quot;8&quot; disptype=&quot;normal&quot; text=&quot;mkey&quot;/&gt;&#10;      &lt;Cell col=&quot;9&quot; disptype=&quot;normal&quot; text=&quot;appDdt&quot;/&gt;&#10;      &lt;Cell col=&quot;10&quot; disptype=&quot;normal&quot; text=&quot;rcptExclDe&quot;/&gt;&#10;      &lt;Cell col=&quot;11&quot; disptype=&quot;normal&quot; text=&quot;exclAppDdt&quot;/&gt;&#10;      &lt;Cell col=&quot;12&quot; disptype=&quot;normal&quot; text=&quot;rcptAprpDe&quot;/&gt;&#10;      &lt;Cell col=&quot;13&quot; disptype=&quot;normal&quot; text=&quot;rcptExclAt&quot;/&gt;&#10;      &lt;Cell col=&quot;14&quot; disptype=&quot;normal&quot; text=&quot;rcptSttsCd&quot;/&gt;&#10;      &lt;Cell col=&quot;15&quot; disptype=&quot;normal&quot; text=&quot;rcptExclRsn&quot;/&gt;&#10;      &lt;Cell col=&quot;16&quot; disptype=&quot;normal&quot; text=&quot;guCd&quot;/&gt;&#10;      &lt;Cell col=&quot;17&quot; disptype=&quot;normal&quot; text=&quot;hhldEsntlSn&quot;/&gt;&#10;      &lt;Cell col=&quot;18&quot; disptype=&quot;normal&quot; text=&quot;rcptEsntlSn&quot;/&gt;&#10;      &lt;Cell col=&quot;19&quot; disptype=&quot;normal&quot; text=&quot;dspthDe&quot;/&gt;&#10;      &lt;Cell col=&quot;20&quot; disptype=&quot;normal&quot; text=&quot;tel&quot;/&gt;&#10;      &lt;Cell col=&quot;21&quot; disptype=&quot;normal&quot; text=&quot;mtel&quot;/&gt;&#10;    &lt;/Band&gt;&#10;    &lt;Band id=&quot;body&quot;&gt;&#10;      &lt;Cell col=&quot;0&quot; disptype=&quot;normal&quot; text=&quot;bind:rcptReqNo&quot;/&gt;&#10;      &lt;Cell col=&quot;1&quot; disptype=&quot;normal&quot; text=&quot;bind:rm&quot;/&gt;&#10;      &lt;Cell col=&quot;2&quot; disptype=&quot;normal&quot; text=&quot;bind:regDt&quot;/&gt;&#10;      &lt;Cell col=&quot;3&quot; disptype=&quot;normal&quot; text=&quot;bind:regerId&quot;/&gt;&#10;      &lt;Cell col=&quot;4&quot; disptype=&quot;normal&quot; text=&quot;bind:updDt&quot;/&gt;&#10;      &lt;Cell col=&quot;5&quot; disptype=&quot;normal&quot; text=&quot;bind:upderId&quot;/&gt;&#10;      &lt;Cell col=&quot;6&quot; disptype=&quot;normal&quot; text=&quot;bind:oficeCd&quot;/&gt;&#10;      &lt;Cell col=&quot;7&quot; disptype=&quot;normal&quot; text=&quot;bind:adstrdCd&quot;/&gt;&#10;      &lt;Cell col=&quot;8&quot; disptype=&quot;normal&quot; text=&quot;bind:mkey&quot;/&gt;&#10;      &lt;Cell col=&quot;9&quot; disptype=&quot;normal&quot; text=&quot;bind:appDdt&quot;/&gt;&#10;      &lt;Cell col=&quot;10&quot; disptype=&quot;normal&quot; text=&quot;bind:rcptExclDe&quot;/&gt;&#10;      &lt;Cell col=&quot;11&quot; disptype=&quot;normal&quot; text=&quot;bind:exclAppDdt&quot;/&gt;&#10;      &lt;Cell col=&quot;12&quot; disptype=&quot;normal&quot; text=&quot;bind:rcptAprpDe&quot;/&gt;&#10;      &lt;Cell col=&quot;13&quot; disptype=&quot;normal&quot; text=&quot;bind:rcptExclAt&quot;/&gt;&#10;      &lt;Cell col=&quot;14&quot; disptype=&quot;normal&quot; text=&quot;bind:rcptSttsCd&quot;/&gt;&#10;      &lt;Cell col=&quot;15&quot; disptype=&quot;normal&quot; text=&quot;bind:rcptExclRsn&quot;/&gt;&#10;      &lt;Cell col=&quot;16&quot; disptype=&quot;normal&quot; text=&quot;bind:guCd&quot;/&gt;&#10;      &lt;Cell col=&quot;17&quot; disptype=&quot;normal&quot; text=&quot;bind:hhldEsntlSn&quot;/&gt;&#10;      &lt;Cell col=&quot;18&quot; disptype=&quot;normal&quot; text=&quot;bind:rcptEsntlSn&quot;/&gt;&#10;      &lt;Cell col=&quot;19&quot; disptype=&quot;normal&quot; text=&quot;bind:dspthDe&quot;/&gt;&#10;      &lt;Cell col=&quot;20&quot; disptype=&quot;normal&quot; text=&quot;bind:tel&quot;/&gt;&#10;      &lt;Cell col=&quot;21&quot; disptype=&quot;normal&quot; text=&quot;bind:mtel&quot;/&gt;&#10;    &lt;/Band&gt;&#10;  &lt;/Format&gt;&#10;&lt;/Formats&gt;&#10;" onheaddblclick="GridSample_onheaddblclick" nodatatext="조회한 데이터가 없습니다." useinputpanel="false" cellsizingtype="col" position="absolute 10 209 945 556" anchor="left top right">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="60"/>
+                <Column size="100"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="110"/>
+                <Column size="80"/>
+                <Column size="110"/>
+                <Column size="90"/>
+                <Column size="90"/>
+                <Column size="90"/>
+                <Column size="250"/>
+                <Column size="80"/>
+                <Column size="90"/>
+                <Column size="155"/>
+                <Column size="90"/>
+                <Column size="90"/>
+                <Column size="140"/>
+                <Column size="100"/>
+              </Columns>
+              <Rows>
+                <Row size="32" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="No"/>
+                <Cell col="1" text="status"/>
+                <Cell col="2" text="member key"/>
+                <Cell col="3" text="hhldNm"/>
+                <Cell col="4" text="hhldIdttNo"/>
+                <Cell col="5" text="rcptNm"/>
+                <Cell col="6" text="rcptIdttNo"/>
+                <Cell col="7" text="dspthDe"/>
+                <Cell col="8" text="rcptAprpDe"/>
+                <Cell col="9" text="appDdtDe"/>
+                <Cell col="10" text="addr"/>
+                <Cell col="11" text="tel"/>
+                <Cell col="12" text="mtel"/>
+                <Cell col="13" text="rm"/>
+                <Cell col="14" text="mvtDe"/>
+                <Cell col="15" text="qualfFrfDe"/>
+                <Cell col="16" text="rcptExclRsn"/>
+                <Cell col="17" text="exclAppDdtDe"/>
+              </Band>
+              <Band id="body">
+                <Cell expr="expr:currow + 1"/>
+                <Cell col="1" style="align:left;" text="bind:sttsNm"/>
+                <Cell col="2" text="bind:mkey"/>
+                <Cell col="3" text="bind:hhldNm"/>
+                <Cell col="4" text="bind:hhldIdttNo" mask="@@@@@@-@xxxxxx" maskchar=" "/>
+                <Cell col="5" text="bind:rcptNm"/>
+                <Cell col="6" text="bind:rcptIdttNo" mask="@@@@@@-@xxxxxx" maskchar=" "/>
+                <Cell col="7" displaytype="date" text="bind:dspthDe" calendardisplaynulltype="none"/>
+                <Cell col="8" displaytype="date" text="bind:rcptAprpDe" calendardisplaynulltype="none"/>
+                <Cell col="9" text="bind:appDdtDe"/>
+                <Cell col="10" style="align:left;" text="bind:addr"/>
+                <Cell col="11" style="align:left;" text="bind:tel"/>
+                <Cell col="12" style="align:left;" text="bind:mtel"/>
+                <Cell col="13" style="align:left;" text="bind:rm"/>
+                <Cell col="14" displaytype="date" text="bind:mvtDe" calendardisplaynulltype="none"/>
+                <Cell col="15" displaytype="date" text="bind:qualfFrfDe" calendardisplaynulltype="none"/>
+                <Cell col="16" style="align:left;" text="bind:rcptExclRsn"/>
+                <Cell col="17" text="bind:exclAppDdtDe"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_excel" taborder="42" text="Excel" class="btn_WF_send" position="absolute 893 186 945 206" onclick="btn_excel_onclick"/>
+        <Static id="sta_WF_TitleLev2" text="Count :" usedecorate="true" class="sta_WF_TitleLev2" position="absolute 10 187 144 208"/>
+        <Static id="sta_totcnt" text="0" position="absolute 78 186 119 207" style="color:#0072bcff;align:right middle;font:arial,9,bold;"/>
+        <Calendar id="cal_srchAprpTo" taborder="14" dateformat="yyyy-MM-dd" position="absolute 373 127 537 147" onchanged="cal_srchAprpTo_onchanged" autoselect="false"/>
+        <Calendar id="cal_dspthDe" taborder="27" dateformat="yyyy-MM-dd" position="absolute 355 649 477 669" enable="false"/>
+        <Calendar id="cal_aprp" taborder="26" dateformat="yyyy-MM-dd" position="absolute 115 649 234 669" enable="false"/>
+        <Static id="Static09" text="rm" class="sta_WFDA_Label" position="absolute 32 676 125 696"/>
+        <Edit id="edt_rm" taborder="30" position="absolute 115 676 213 696" lengthunit="utf8"/>
+        <Calendar id="cal_srchAprpFrom" taborder="13" dateformat="yyyy-MM-dd" position="absolute 103 127 281 147" onchanged="cal_srchAprpFrom_onchanged" autoselect="false"/>
+        <Edit id="regAt_sampleRow" taborder="41" visible="false" position="absolute 708 716 733 741"/>
+        <Static id="Static11" text="Recipient name" class="sta_WFDA_Label" position="absolute 31 622 124 642"/>
+        <Edit id="edt_rcptNm" taborder="21" lengthunit="utf8" position="absolute 115 622 237 642" enable="false" imemode="hangul" maxlength="18"/>
+        <Static id="Static14" text="Recipient ID Number" class="sta_WFDA_Label" position="absolute 247 622 352 642"/>
+        <Radio id="rdo_stts" taborder="31" position="absolute 282 676 509 696" columncount="4" index="0" value="1" onitemchanged="rdo_stts_onitemchanged"/>
+        <Static id="Static06" text="status" class="sta_WFDA_Label" position="absolute 227 676 280 696"/>
+        <Static id="sta_regDt" text="registry Date" class="sta_WFDA_Label" position="absolute 492 676 585 696"/>
+        <Calendar id="cal_regDt" taborder="40" dateformat="yyyy-MM-dd" position="absolute 575 676 686 696" visible="false"/>
+        <Static id="sta_WFSA_LabelP04" text="Recipient name" wordwrap="none" class="sta_WFSA_Label" position="absolute 291 100 374 120"/>
+        <Edit id="edt_srchRcptNm" taborder="11" lengthunit="utf8" position="absolute 373 100 517 120" imemode="hangul" autoselect="true" maxlength="21"/>
+        <Static id="sta_WFSA_LabelP09" text="Recipient ID Number" wordwrap="none" class="sta_WFSA_Label" position="absolute 544 100 651 120"/>
+        <MaskEdit id="msk_rcptIdttNo" taborder="22" position="absolute 355 622 458 642" mask="######-#xxxxxx" type="string" style="align:left middle;" maskchar=" " enable="false" autoselect="true"/>
+        <MaskEdit id="msk_hhldIdttNo" taborder="25" type="string" mask="######-#xxxxxx" position="absolute 815 622 926 642" style="align:left middle;" maskchar=" " enable="false" autoselect="true"/>
+        <MaskEdit id="msk_srchHhldIdttNo" taborder="9" readonly="false" type="string" mask="######-#######" maskchar=" " position="absolute 654 73 925 93" style="align:center middle;" oneditclick="msk_srchHhldIdttNo_oneditclick"/>
+        <MaskEdit id="msk_srchRcptIdttNo" taborder="12" type="string" mask="######-#######" maskchar=" " position="absolute 654 100 925 120" style="align:center middle;" oneditclick="msk_srchRcptIdttNo_oneditclick"/>
+        <Static id="Static13" text="Recipient Count" class="sta_WFDA_Label" position="absolute 492 595 569 615"/>
+        <Edit id="edt_tprHdCo" taborder="19" lengthunit="utf8" position="absolute 575 595 686 615" inputtype="digit" maxlength="9"/>
+        <Button id="btn_reset" taborder="16" text="Reset" class="btn_WFSA_Search2" position="absolute 773 126 845 148" onclick="btn_reset_onclick"/>
+        <Button id="btn_cancel" taborder="38" text="Cancel" class="btn_WF_crud" position="absolute 554 716 604 740" onclick="btn_cancel_onclick" visible="false" enable="false"/>
+        <Edit id="modAt_sampleRow" taborder="37" visible="false" position="absolute 676 716 701 741"/>
+        <CheckBox id="chk_same" taborder="23" position="absolute 468 622 497 642" onchanged="chk_same_onchanged" truevalue="1" falsevalue="0" value="0" enable="false"/>
+        <Static id="sta_menuDepth" text="Menu Depth" usedecorate="true" class="sta_WF_Location" position="absolute 207 9 873 28"/>
+        <Edit id="edt_chgRsn" taborder="32" lengthunit="utf8" maxlength="3000" position="absolute 815 676 926 696"/>
+        <Static id="Static05" text="change reason" class="sta_WFDA_Label" position="absolute 701 676 794 696"/>
+        <Button id="btn_modify" taborder="36" text="수정" onclick="btn_modify_onclick" class="btn_WF_crud" position="absolute 607 716 657 740" enable="false" visible="false"/>
+        <Static id="sta_qualfFrfDe" text="Cancellation date" class="sta_WFDA_Label" position="absolute 492 676 585 696" visible="false"/>
+        <Calendar id="cal_qualfFrfDe" taborder="35" dateformat="yyyy-MM-dd" position="absolute 575 676 686 696" visible="false"/>
+        <Static id="sta_mvtDe" text="move out Date" class="sta_WFDA_Label" position="absolute 492 676 585 696" visible="false"/>
+        <Calendar id="cal_mvtDe" taborder="34" dateformat="yyyy-MM-dd" position="absolute 575 676 686 696" visible="false"/>
+      </Layout>
+    </Layouts>
+    <Bind>
+      <BindItem id="item0" compid="edt_mkey" propid="value" datasetid="ds_sampleRow" columnid="mkey"/>
+      <BindItem id="item1" compid="edt_tel" propid="value" datasetid="ds_sampleRow" columnid="tel"/>
+      <BindItem id="item2" compid="edt_mtel" propid="value" datasetid="ds_sampleRow" columnid="mtel"/>
+      <BindItem id="item3" compid="cal_dspthDe" propid="value" datasetid="ds_sampleRow" columnid="dspthDe"/>
+      <BindItem id="item4" compid="cal_aprp" propid="value" datasetid="ds_sampleRow" columnid="rcptAprpDe"/>
+      <BindItem id="item6" compid="edt_rm" propid="value" datasetid="ds_sampleRow" columnid="rm"/>
+      <BindItem id="item5" compid="cal_regDt" propid="value" datasetid="ds_sampleRow" columnid="regDt"/>
+      <BindItem id="item7" compid="edt_rcptNm" propid="value" datasetid="ds_sampleRow" columnid="rcptNm"/>
+      <BindItem id="item10" compid="edt_hhldNm" propid="value" datasetid="ds_sampleRow" columnid="hhldNm"/>
+      <BindItem id="item9" compid="msk_rcptIdttNo" propid="value" datasetid="ds_sampleRow" columnid="rcptIdttNo"/>
+      <BindItem id="item11" compid="msk_hhldIdttNo" propid="value" datasetid="ds_sampleRow" columnid="hhldIdttNo"/>
+      <BindItem id="item14" compid="rdo_stts" propid="value" datasetid="ds_sampleRow" columnid="rcptSttsCd"/>
+      <BindItem id="item12" compid="edt_hdCo" propid="value" datasetid="ds_sampleRow" columnid="hdCo"/>
+      <BindItem id="item13" compid="edt_tprHdCo" propid="value" datasetid="ds_sampleRow" columnid="tprHdCo"/>
+      <BindItem id="item16" compid="edt_dongHo" propid="value" datasetid="ds_sampleRow" columnid="rcptDongHo"/>
+      <BindItem id="item15" compid="edt_chgRsn" propid="value" datasetid="ds_sampleRow" columnid="chgRsn"/>
+      <BindItem id="item8" compid="cal_qualfFrfDe" propid="value" datasetid="ds_sampleRow" columnid="qualfFrfDe"/>
+      <BindItem id="item17" compid="cal_mvtDe" propid="value" datasetid="ds_sampleRow" columnid="mvtDe"/>
+    </Bind>
+    <Objects>
+      <Dataset id="ds_sample" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" onrowposchanged="ds_sample_onrowposchanged" canrowposchange="ds_sample_canrowposchange">
+        <ColumnInfo>
+          <Column id="rcptRequNo" type="STRING" size="256"/>
+          <Column id="rm" type="STRING" size="3000"/>
+          <Column id="regDt" type="STRING" size="256"/>
+          <Column id="regerId" type="STRING" size="256"/>
+          <Column id="updDt" type="STRING" size="256"/>
+          <Column id="upderId" type="STRING" size="256"/>
+          <Column id="oficeCd" type="STRING" size="256"/>
+          <Column id="adstrdCd" type="STRING" size="256"/>
+          <Column id="mkey" type="STRING" size="256"/>
+          <Column id="appDdtDe" type="STRING" size="256"/>
+          <Column id="rcptExclDe" type="STRING" size="256"/>
+          <Column id="exclAppDdtDe" type="STRING" size="256"/>
+          <Column id="rcptAprpDe" type="STRING" size="256"/>
+          <Column id="rcptAprpDeFrom" type="STRING" size="256"/>
+          <Column id="rcptAprpDeTo" type="STRING" size="256"/>
+          <Column id="rcptExclAt" type="STRING" size="256"/>
+          <Column id="rcptSttsCd" type="STRING" size="256"/>
+          <Column id="rcptExclRsn" type="STRING" size="256"/>
+          <Column id="guCd" type="STRING" size="256"/>
+          <Column id="hhldEsntlSeqn" type="STRING" size="256"/>
+          <Column id="rcptEsntlSeqn" type="STRING" size="256"/>
+          <Column id="dspthDe" type="STRING" size="256"/>
+          <Column id="tel" type="STRING" size="256"/>
+          <Column id="mtel" type="STRING" size="256"/>
+          <Column id="sn" type="STRING" size="256"/>
+          <Column id="chgDe" type="STRING" size="256"/>
+          <Column id="chgDeFrom" type="STRING" size="256"/>
+          <Column id="chgDeTo" type="STRING" size="256"/>
+          <Column id="chgRsn" type="STRING" size="3000"/>
+          <Column id="chgSeCd" type="STRING" size="256"/>
+          <Column id="lgdongCd" type="STRING" size="256"/>
+          <Column id="lgdongCdFrom" type="STRING" size="256"/>
+          <Column id="lgdongCdTo" type="STRING" size="256"/>
+          <Column id="mntn" type="STRING" size="256"/>
+          <Column id="mnnm" type="STRING" size="256"/>
+          <Column id="slno" type="STRING" size="256"/>
+          <Column id="spclAddr" type="STRING" size="256"/>
+          <Column id="dong" type="STRING" size="256"/>
+          <Column id="ho" type="STRING" size="256"/>
+          <Column id="ugAt" type="STRING" size="256"/>
+          <Column id="ugFloorNo" type="STRING" size="256"/>
+          <Column id="etcAddr" type="STRING" size="256"/>
+          <Column id="rn" type="STRING" size="256"/>
+          <Column id="bldMnnm" type="STRING" size="256"/>
+          <Column id="bldSlno" type="STRING" size="256"/>
+          <Column id="bldNm" type="STRING" size="256"/>
+          <Column id="hhldNm" type="STRING" size="256"/>
+          <Column id="hhldIdttNo" type="STRING" size="256"/>
+          <Column id="rcptNm" type="STRING" size="256"/>
+          <Column id="rcptIdttNo" type="STRING" size="256"/>
+          <Column id="qualfFrfDe" type="STRING" size="256"/>
+          <Column id="mvtDe" type="STRING" size="256"/>
+          <Column id="nm" type="STRING" size="256"/>
+          <Column id="idttNo" type="STRING" size="256"/>
+          <Column id="hdCo" type="STRING" size="256"/>
+          <Column id="tprHdCo" type="STRING" size="256"/>
+          <Column id="guNm" type="STRING" size="256"/>
+          <Column id="lgdongNm" type="STRING" size="256"/>
+          <Column id="addr" type="STRING" size="3000"/>
+          <Column id="sttsNm" type="STRING" size="3000"/>
+          <Column id="bldHo" type="STRING" size="256"/>
+          <Column id="bldDong" type="STRING" size="256"/>
+          <Column id="rcptDongHo" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_sampleRow" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="rcptRequNo" type="STRING" size="256"/>
+          <Column id="rm" type="STRING" size="3000"/>
+          <Column id="regDt" type="STRING" size="256"/>
+          <Column id="regerId" type="STRING" size="256"/>
+          <Column id="updDt" type="STRING" size="256"/>
+          <Column id="upderId" type="STRING" size="256"/>
+          <Column id="oficeCd" type="STRING" size="256"/>
+          <Column id="adstrdCd" type="STRING" size="256"/>
+          <Column id="mkey" type="STRING" size="256"/>
+          <Column id="appDdtDe" type="STRING" size="256"/>
+          <Column id="rcptExclDe" type="STRING" size="256"/>
+          <Column id="exclAppDdtDe" type="STRING" size="256"/>
+          <Column id="rcptAprpDe" type="STRING" size="256"/>
+          <Column id="rcptAprpDeFrom" type="STRING" size="256"/>
+          <Column id="rcptAprpDeTo" type="STRING" size="256"/>
+          <Column id="rcptExclAt" type="STRING" size="256"/>
+          <Column id="rcptSttsCd" type="STRING" size="256"/>
+          <Column id="rcptExclRsn" type="STRING" size="256"/>
+          <Column id="guCd" type="STRING" size="256"/>
+          <Column id="hhldEsntlSeqn" type="STRING" size="256"/>
+          <Column id="rcptEsntlSeqn" type="STRING" size="256"/>
+          <Column id="dspthDe" type="STRING" size="256"/>
+          <Column id="tel" type="STRING" size="256"/>
+          <Column id="mtel" type="STRING" size="256"/>
+          <Column id="sn" type="STRING" size="256"/>
+          <Column id="chgDe" type="STRING" size="256"/>
+          <Column id="chgDeFrom" type="STRING" size="256"/>
+          <Column id="chgDeTo" type="STRING" size="256"/>
+          <Column id="chgRsn" type="STRING" size="3000"/>
+          <Column id="chgSeCd" type="STRING" size="256"/>
+          <Column id="lgdongCd" type="STRING" size="256"/>
+          <Column id="lgdongCdFrom" type="STRING" size="256"/>
+          <Column id="lgdongCdTo" type="STRING" size="256"/>
+          <Column id="mntn" type="STRING" size="256"/>
+          <Column id="mnnm" type="STRING" size="256"/>
+          <Column id="slno" type="STRING" size="256"/>
+          <Column id="spclAddr" type="STRING" size="256"/>
+          <Column id="dong" type="STRING" size="256"/>
+          <Column id="ho" type="STRING" size="256"/>
+          <Column id="ugAt" type="STRING" size="256"/>
+          <Column id="ugFloorNo" type="STRING" size="256"/>
+          <Column id="etcAddr" type="STRING" size="256"/>
+          <Column id="rn" type="STRING" size="256"/>
+          <Column id="bldMnnm" type="STRING" size="256"/>
+          <Column id="bldSlno" type="STRING" size="256"/>
+          <Column id="bldNm" type="STRING" size="256"/>
+          <Column id="hhldNm" type="STRING" size="256"/>
+          <Column id="hhldIdttNo" type="STRING" size="256"/>
+          <Column id="rcptNm" type="STRING" size="256"/>
+          <Column id="rcptIdttNo" type="STRING" size="256"/>
+          <Column id="qualfFrfDe" type="STRING" size="256"/>
+          <Column id="mvtDe" type="STRING" size="256"/>
+          <Column id="nm" type="STRING" size="256"/>
+          <Column id="idttNo" type="STRING" size="256"/>
+          <Column id="hdCo" type="STRING" size="256"/>
+          <Column id="tprHdCo" type="STRING" size="256"/>
+          <Column id="guNm" type="STRING" size="256"/>
+          <Column id="lgdongNm" type="STRING" size="256"/>
+          <Column id="addr" type="STRING" size="3000"/>
+          <Column id="sttsNm" type="STRING" size="3000"/>
+          <Column id="bldHo" type="STRING" size="256"/>
+          <Column id="bldDong" type="STRING" size="256"/>
+          <Column id="rcptDongHo" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <FileDialog id="excel_fileDialog" filter="Excel(*.xls)|*.xls|All(*.*)|*.*|" filterindex="0" defaultextension="true"/>
+      <Dataset id="ds_csInfoRow" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="tel" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_voInfo" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep">
+        <ColumnInfo>
+          <Column id="voClass" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="dsTransInfo" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="strSvcID" type="STRING" size="256"/>
+          <Column id="strURL" type="STRING" size="256"/>
+          <Column id="strInDatasets" type="STRING" size="256"/>
+          <Column id="strOutDatasets" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript4.0"><![CDATA[
+/*
+  file : csSampleMngF
+  description : Manage recipients
+  author : myunghan
+*/
+
+include "lib::common.xjs";
+
+
+// voClass dataSet setting
+function set_voClassDataSet()
+{
+	ds_voInfo.clearData();
+	var rowAdd = ds_voInfo.addRow();
+	ds_voInfo.setColumn(rowAdd, "voClass", "arisuinfo.cs.csMng.service.SampleMngVO");
+}
+
+// onload 
+function csSampleMngF_onload(obj:Form, e:LoadEventInfo)
+{
+	gfnInIt(this.name);
+	
+	// office combo box setting
+	gfnSetOff(obj, "cbo_srchOff", "", "1", "1");
+
+	// if it's not from main office, then set the office code
+	if(sso_officeId != "002"){
+		var cboCnt = cbo_srchOff.getCount();	
+		var matchIndex = 0;
+		var matchAt = false;
+	
+		for(var i=0 ; i<cboCnt ; i++){
+			cbo_srchOff.index = i;
+			
+			if(cbo_srchOff.value == sso_officeId){
+				matchIndex = i;
+				matchAt = true;
+			}
+		}
+		
+		// if it's not from main office, then disable this combo box
+		if(matchAt){
+			cbo_srchOff.index = matchIndex;
+			cbo_srchOff.enable = false;
+		// if it's from main office, then enable this combo box
+		} else {
+			cbo_srchOff.index = 0;
+			cbo_srchOff.enable = true;
+		}	
+ 	}
+	
+    // search status combo box setting
+	gfnSetCmCd(obj, "cbo_srchStts", "CS046", "1", "1");
+	// status radio setting
+    gfnSetCmCd(obj, "rdo_stts", "CS046", "", "");
+	
+    // Starting date setting from
+	cal_srchAprpFrom.value = AddMonth( Today(), -1 );
+	// Starting date setting to
+    cal_srchAprpTo.value = Today();
+	
+	// focus setting to guCd editbox
+    var Focus = edt_srchGuCd.setFocus();
+}
+
+// Office combo box onitemchanged
+function cbo_srchOff_onitemchanged(obj:Combo, e:ItemChangeEventInfo)
+{
+	edt_srchGuCd.value = "";
+	edt_srchGuNm.value = "";
+	edt_srchAdstrdCdFrom.value = "";
+	edt_srchAdstrdNmFrom.value = "";
+	edt_srchAdstrdCdTo.value = "";
+	edt_srchAdstrdNmTo.value = "";
+}
+
+// Gu code edit box onitemchanged
+function edt_srchGuCd_onkillfocus(obj:Edit, e:KillFocusEventInfo)
+{
+	var rtnObj = gfnGetGuName(obj, cbo_srchOff.value);
+	edt_srchGuNm.value = rtnObj.guNm;
+	
+	edt_srchAdstrdCdFrom.value = "";
+	edt_srchAdstrdNmFrom.value = "";
+	edt_srchAdstrdCdTo.value = "";
+	edt_srchAdstrdNmTo.value = "";
+}
+
+// Dong code(From) edit box onkillfocus
+function edt_srchAdstrdCdFrom_onkillfocus(obj:Edit, e:KillFocusEventInfo)
+{
+	if(edt_srchGuCd.value == null){
+		alert("Please enter your region code.");
+		var Focus = edt_srchGuCd.setFocus();
+	}
+	else if(edt_srchGuCd.value == ""){
+		alert("Please enter your region code.");
+		var Focus01 = edt_srchGuCd.setFocus();
+	}
+	else{
+		var rtnObj = gfnGetDongName(obj, edt_srchGuCd.value);
+		edt_srchAdstrdNmFrom.value = rtnObj.dongNm;
+		edt_srchAdstrdCdTo.value = edt_srchAdstrdCdFrom.value;
+		edt_srchAdstrdNmTo.value = rtnObj.dongNm;
+	}
+}
+
+// Dong code(To) edit box onkillfocus
+function edt_srchAdstrdCdTo_onkillfocus(obj:Edit, e:KillFocusEventInfo)
+{
+	if(edt_srchGuCd.value == null){
+		alert("Please enter your region code.");
+		var Focus = edt_srchGuCd.setFocus();
+	}
+	else if(edt_srchGuCd.value == ""){
+		alert("Please enter your region code.");
+		var Focus01 = edt_srchGuCd.setFocus();
+	}
+	else{
+		var rtnObj = gfnGetDongName(obj, edt_srchGuCd.value);
+		edt_srchAdstrdNmTo.value = rtnObj.dongNm;
+	}
+}
+
+// srchHhldIdttNo maskedit oneditclick
+function msk_srchHhldIdttNo_oneditclick(obj:MaskEdit,  e:EditClickEventInfo)
+{
+	msk_srchHhldIdttNo.value = "";
+	msk_srchHhldIdttNo.mask = "######-#######";
+}
+
+// srchRcptIdttNo maskedit oneditclick
+function msk_srchRcptIdttNo_oneditclick(obj:MaskEdit,  e:EditClickEventInfo)
+{
+	msk_srchRcptIdttNo.value = "";
+	msk_srchRcptIdttNo.mask = "######-#######";
+}
+
+
+// GridSample onheaddblclick
+function GridSample_onheaddblclick(obj:Grid, e:GridClickEventInfo)
+{
+	// sorting
+    gfnGridSort(obj,e);
+}
+
+// member key setting
+function gfnSetCstmNo(inCstmNo)
+{
+	var temp = "";
+	var zeroCnt = 9 - inCstmNo.length;
+	
+	for(var i=0 ; i<zeroCnt ; i++){
+		temp += "0";
+	}
+	var outCstmNo = temp + inCstmNo;
+	
+	return outCstmNo;
+}
+
+// Reset button onclick
+function btn_reset_onclick(obj:Button,  e:ClickEventInfo)
+{
+	edt_srchGuCd.value = "";
+	edt_srchGuNm.value = "";
+	edt_srchAdstrdCdFrom.value = "";
+	edt_srchAdstrdNmFrom.value = "";
+	edt_srchAdstrdCdTo.value = "";
+	edt_srchAdstrdNmTo.value = "";
+	edt_srchMkey.value = "";
+	edt_srchHhldNm.value = "";
+	msk_srchHhldIdttNo.value = "";
+	cbo_srchStts.value = "";
+	edt_srchRcptNm.value = "";
+	msk_srchRcptIdttNo.value = "";
+	cal_srchAprpFrom.value = AddMonth( Today(), -1 );
+	cal_srchAprpTo.value = Today();
+	
+	if( cbo_srchOff.enable == true ){
+		cbo_srchOff.index = 0;
+	}
+	
+	cbo_srchStts.index = 0;
+}
+
+// Search button onclick
+function btn_Search_onclick(obj:Button,  e:ClickEventInfo)
+{
+	if ( cf_IsEssential(this, edt_srchGuCd.value, "edt_srchGuCd", "Region Code") ) {
+		return;
+	}
+	else if ( cf_IsEssential(this, edt_srchAdstrdCdFrom.value, "edt_srchAdstrdCdFrom", "Area Code") ) {
+		return;
+	}
+	else if ( cf_IsEssential(this, edt_srchAdstrdCdTo.value, "edt_srchAdstrdCdTo", "Area Code") ) {
+		return;
+	}
+	else{
+		search_sampleList();
+	}
+}
+
+//search_sampleList
+function search_sampleList(obj:Button,  e:ClickEventInfo)
+{
+	var oficeCd = "";
+	var guCd = "";
+	var adstrdCdFrom = "";
+	var adstrdCdTo = "";
+	var mkey = "";
+	var hhldNm = "";
+	var hhldIdttNo = "";
+	var rcptNm = "";
+	var rcptIdttNo = "";
+	var rcptSttsCd = "";
+	var rcptAprpDeFrom = "";
+	var rcptAprpDeTo = "";
+	
+	if(cbo_srchOff.value != null){
+		oficeCd = "oficeCd="+cbo_srchOff.value;
+	}
+	if(edt_srchGuCd.value != null){
+		guCd = "guCd="+edt_srchGuCd.value;
+	}
+	if(edt_srchAdstrdCdFrom.value != null && edt_srchAdstrdCdTo.value != null){
+		adstrdCdFrom = "adstrdCdFrom="+edt_srchAdstrdCdFrom.value;
+		adstrdCdTo = "adstrdCdTo="+edt_srchAdstrdCdTo.value;
+	}
+	if(edt_srchMkey.value != null){
+		if(edt_srchMkey.value != "" ){
+			var realMkey = gfnSetCstmNo(edt_srchMkey.value);
+			edt_srchMkey.value = realMkey;
+			
+			mkey = "mkey=" + realMkey;
+		}
+	}
+	if(edt_srchHhldNm.value != null){
+		if(edt_srchHhldNm.value != "" ){
+			hhldNm = "hhldNm=" + edt_srchHhldNm.value;
+		}
+	}
+	if(msk_srchHhldIdttNo.value != null){
+		if(msk_srchHhldIdttNo.value != "" ){
+			hhldIdttNo = "hhldIdttNo=" + msk_srchHhldIdttNo.value;
+		}
+	}
+	if(edt_srchRcptNm.value != null){
+		if(edt_srchRcptNm.value != "" ){
+			rcptNm = "rcptNm=" + edt_srchRcptNm.value;
+		}
+	}
+	if(msk_srchRcptIdttNo.value != null){
+		if(msk_srchRcptIdttNo.value != "" ){
+			rcptIdttNo = "rcptIdttNo=" + msk_srchRcptIdttNo.value;
+		}
+	}
+	if(cal_srchAprpFrom.value != null){
+		if(cal_srchAprpFrom.value != "" ){
+			rcptAprpDeFrom = "rcptAprpDeFrom=" + cal_srchAprpFrom.value;
+		}
+	}
+	if(cal_srchAprpTo.value != null){
+		if(cal_srchAprpTo.value != "" ){
+			rcptAprpDeTo = "rcptAprpDeTo=" + cal_srchAprpTo.value;
+		}
+	}
+	if(cbo_srchStts.value != null){
+		if(cbo_srchStts.value != "" ){
+			rcptSttsCd = "rcptSttsCd=" + cbo_srchStts.value;
+		}
+	}
+	
+	arisuTransaction( this, "searchList", "svc::/cs/csMng/searchSample.do", "", "ds_sample=ds_output_01", oficeCd+" "+guCd+" "+adstrdCdFrom+" "+adstrdCdTo+" "+mkey+" "+hhldNm+" "+hhldIdttNo+" "+rcptNm+" "+rcptIdttNo+" "+rcptAprpDeFrom+" "+rcptAprpDeTo+" "+rcptSttsCd , "fnCallback");
+}
+
+// canrowposchange
+function ds_sample_canrowposchange(obj:Dataset, e:DSRowPosChangeEventInfo)
+{
+	if( regAt_sampleRow.value == "Y" ){
+		if(confirm("You are currently editing your information.\r\n Do you want to cancel the changes and go to the new row?", "warning", "icon=warning;lock=all")){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+}
+
+// onrowposchanged
+function ds_sample_onrowposchanged(obj:Dataset, e:DSRowPosChangeEventInfo)
+{
+	ds_sampleRow.clearData();
+    var rowAdd = ds_sampleRow.addRow();
+    ds_sampleRow.copyRow(rowAdd, ds_sample, ds_sample.rowposition);
+	regAt_sampleRow.value = "N";
+	fnRowEditDisable();
+	
+	if( ds_sampleRow.getColumn( 0, "rcptSttsCd") == "01"){
+		sta_regDt.visible = true;
+		cal_regDt.visible = true;
+		sta_qualfFrfDe.visible = false;
+		cal_qualfFrfDe.visible = false;
+		sta_mvtDe.visible = false;
+		cal_mvtDe.visible = false;
+	}
+	if( ds_sampleRow.getColumn( 0, "rcptSttsCd") == "02"){
+		sta_regDt.visible = false;
+		cal_regDt.visible = false;
+		sta_qualfFrfDe.visible = true;
+		cal_qualfFrfDe.visible = true;
+		sta_mvtDe.visible = false;
+		cal_mvtDe.visible = false;
+	}
+	if( ds_sampleRow.getColumn( 0, "rcptSttsCd") == "03"){
+		sta_regDt.visible = false;
+		cal_regDt.visible = false;
+		sta_qualfFrfDe.visible = false;
+		cal_qualfFrfDe.visible = false;
+		sta_mvtDe.visible = true;
+		cal_mvtDe.visible = true;
+	}
+}
+
+function fnRowEditEnable()
+{
+	edt_mkey.enable = true;
+	btn_mkeySch.enable = true;
+	edt_rcptNm.enable = true;
+	msk_rcptIdttNo.enable = true;
+	msk_rcptIdttNo.mask = "######-#######";
+	chk_same.enable = true;
+	edt_hhldNm.enable = true;
+	msk_hhldIdttNo.enable = true;
+	msk_hhldIdttNo.mask = "######-#######";
+	cal_aprp.enable = true;
+	cal_dspthDe.enable = true;
+}
+
+function fnRowEditDisable()
+{
+	edt_mkey.enable = false;
+	btn_mkeySch.enable = false;
+	edt_rcptNm.enable = false;
+	msk_rcptIdttNo.enable = false;
+	msk_rcptIdttNo.mask = "######-#xxxxxx";
+	chk_same.enable = false;
+	edt_hhldNm.enable = false;
+	msk_hhldIdttNo.enable = false;
+	msk_hhldIdttNo.mask = "######-#xxxxxx";
+	cal_aprp.enable = false;
+	cal_dspthDe.enable = false;
+}
+
+// rdo_stts_onitemchanged
+function rdo_stts_onitemchanged(obj:Radio, e:ItemChangeEventInfo)
+{
+	if(rdo_stts.value == "01"){
+		sta_regDt.visible = true;
+		cal_regDt.visible = true;
+		sta_qualfFrfDe.visible = false;
+		cal_qualfFrfDe.visible = false;
+		sta_mvtDe.visible = false;
+		cal_mvtDe.visible = false;
+	}
+	if(rdo_stts.value == "02"){
+		sta_regDt.visible = false;
+		cal_regDt.visible = false;
+		sta_qualfFrfDe.visible = true;
+		cal_qualfFrfDe.visible = true;
+		sta_mvtDe.visible = false;
+		cal_mvtDe.visible = false;
+	}
+	if(rdo_stts.value == "03"){
+		sta_regDt.visible = false;
+		cal_regDt.visible = false;
+		sta_qualfFrfDe.visible = false;
+		cal_qualfFrfDe.visible = false;
+		sta_mvtDe.visible = true;
+		cal_mvtDe.visible = true;
+	}
+}
+
+// Add button onclick
+function btn_add_onclick(obj:Button,  e:ClickEventInfo)
+{
+	if( regAt_sampleRow.value == "Y" ){
+		if(confirm("You are currently editing your information.\r\n Do you want to cancel the changes and go to the new row?", "warning", "icon=warning;lock=all")){
+			ds_sampleRow.clearData();
+			var rowAdd = ds_sampleRow.addRow();
+			regAt_sampleRow.value = "Y";
+			
+			rdo_stts.value = "01"  // radio box setting
+			cal_regDt.value = Today();
+			fnRowEditEnable();
+		}
+		else{
+			return;
+		}
+	}
+	else{
+		ds_sampleRow.clearData();
+		var rowAdd = ds_sampleRow.addRow();
+		regAt_sampleRow.value = "Y";
+		
+		rdo_stts.value = "01"  // radio box setting
+		cal_regDt.value = Today();
+		fnRowEditEnable();
+	}
+}
+
+// Save button onclick
+function btn_save_onclick(obj:Button,  e:ClickEventInfo)
+{
+	// check Essential field
+	if ( cf_IsEssential(this, edt_mkey.value, "edt_mkey", "member key") ) {
+		return;
+	}
+	if ( cf_IsEssential(this, edt_rcptNm.value, "edt_rcptNm", "Recipient name") ) {
+		return;
+	}
+	if ( cf_IsEssential(this, msk_rcptIdttNo.value, "msk_rcptIdttNo", "Recipient ID Number") ) {
+		return;
+	}
+	if ( cf_IsEssential(this, edt_hhldNm.value, "edt_hhldNm", "Household Name") ) {
+		return;
+	}
+	if ( cf_IsEssential(this, msk_hhldIdttNo.value, "msk_hhldIdttNo", "Household ID Number") ) {
+		return;
+	}
+	
+	// registry
+	if (regAt_sampleRow.value == 'Y') {
+		if (confirm("member key: " + ds_sampleRow.getColumn(ds_sampleRow.rowposition, "mkey") + " Do you want to save?"," warning ", "icon=warning;lock=all")){
+			
+			set_voClassDataSet();
+			
+			ds_sampleRow.setColumn(0,"regerId", sso_userId);
+			ds_sampleRow.setColumn(0,"upderId", sso_userId);
+			var chgDe = Today();
+			ds_sampleRow.setColumn(0,"chgDe", chgDe);
+			arisuTransaction( this, "insertSample", "svc::/cs/csMng/registSample.do", "ds_input=ds_sampleRow ds_voInfo=ds_voInfo", "", "", "fnCallback");
+		}
+	}
+	else{
+	// edit
+		
+		if(rdo_stts.value != "01"){
+			if (confirm("member key: " + ds_sampleRow.getColumn(ds_sampleRow.rowposition, "mkey") + " Do you want to edit?"," warning ", "icon=warning;lock=all")){
+				
+				set_voClassDataSet();
+				ds_sampleRow.setColumn(0,"regerId", sso_userId);
+				ds_sampleRow.setColumn(0,"upderId", sso_userId);
+				
+				if(rdo_stts.value == "02"){
+					ds_sampleRow.setColumn(0,"chgDe", cal_qualfFrfDe.value);
+				}
+				if(rdo_stts.value == "03"){
+					ds_sampleRow.setColumn(0,"chgDe", cal_mvtDe.value);
+				}
+				arisuTransaction( this, "updateSample", "svc::/cs/csMng/modifySample.do", "ds_input=ds_sampleRow ds_voInfo=ds_voInfo", "", "", "fnCallback");
+			}
+		}
+		else{
+			if (confirm("Please click Add to add a new row. Do you want to continue?"," warning ", "icon=warning;lock=all")){
+				set_voClassDataSet();
+				ds_sampleRow.setColumn(0,"regerId", sso_userId);
+				ds_sampleRow.setColumn(0,"upderId", sso_userId);
+				if(rdo_stts.value == "01"){
+					ds_sampleRow.setColumn(0,"chgDe", cal_regDt.value);
+				}
+				if(rdo_stts.value == "02"){
+					ds_sampleRow.setColumn(0,"chgDe", cal_qualfFrfDe.value);
+				}
+				if(rdo_stts.value == "03"){
+					ds_sampleRow.setColumn(0,"chgDe", cal_mvtDe.value);
+				}
+				arisuTransaction( this, "updateSample", "svc::/cs/csMng/modifySample.do", "ds_input=ds_sampleRow ds_voInfo=ds_voInfo", "", "", "fnCallback");
+			}
+		}
+	}
+}
+
+// srchAprpFrom Calendar onchanged
+function cal_srchAprpFrom_onchanged(obj:Calendar, e:ChangeEventInfo)
+{
+	if(cal_srchAprpFrom.value != null && cal_srchAprpTo.value != null){
+		if( cal_srchAprpFrom.value > cal_srchAprpTo.value){
+			alert("Start date should be earlier than end date.");
+			cal_srchAprpFrom.value = "";
+			var dateFromFocus = cal_srchAprpFrom.setFocus();
+		}
+	}
+}
+
+// srchAprpTo Calendar onchanged
+function cal_srchAprpTo_onchanged(obj:Calendar, e:ChangeEventInfo)
+{
+	if(cal_srchAprpFrom.value != null && cal_srchAprpTo.value != null){
+		if( cal_srchAprpFrom.value < cal_srchAprpTo.value){
+			alert("End date should be later than start date.");
+			cal_srchAprpTo.value = "";
+			var dateToFocus = cal_srchAprpTo.setFocus();
+		}
+	}
+}
+
+// chgHst button onclick
+function btn_chgHst_onclick(obj:Button,  e:ClickEventInfo)
+{
+	if( ds_sample.getColumn(ds_sample.rowposition, "hhldIdttNo")== null || ds_sample.getColumn(ds_sample.rowposition, "hhldIdttNo") == "" ){
+		alert("Please select an entry.");
+	}
+	else{
+		var prm1, prm2;	
+		
+		prm1 = "fnChgHstPopCallBack";
+		prm2 = ds_sample.getColumn(ds_sample.rowposition, "hhldIdttNo");
+		var sArg = {param1:prm1, param2:prm2};
+		var objDs = cf_OpenPopup("csCsMng::csChgHstP.xfdl", "csChgHst", sArg, "left=-1, top=-1, width=930, height=490, title=false, status=false, modeless=true, layered=false, autosize=false");	
+	}
+}
+
+// mkeySch button onclick
+function btn_mkeySch_onclick(obj:Button,  e:ClickEventInfo)
+{
+	var  prm0 = cbo_srchOff.value;
+	var  prm1 = edt_srchGuCd.value;
+	var  prm2 = edt_srchGuNm.value;
+	
+	var sArg = {param0:prm0, param1:prm1, param2:prm2};
+	var rtn  = cf_OpenPopup("csCsMng::csMkeySchP.xfdl", "member key검색", sArg, "left=-1, top=-1, width=930, height=535, title=false, status=false, modeless=false, layered=false, autosize=false");	
+	edt_mkey.value = rtn.mkey;
+	edt_hdCo.value = rtn.hdCo;
+	edt_tprHdCo.value = rtn.tprHdCo;
+}
+
+// srchGuCd button onclick
+function btn_srchGuCd_onclick(obj:Button,  e:ClickEventInfo)
+{
+	var oficeCd = cbo_srchOff.value;
+	var rtn = gfnSearchGuCd(oficeCd);
+	
+	edt_srchGuCd.value = rtn.guCd;
+	edt_srchGuNm.value = rtn.guNm;
+}
+
+// srchDongCdFrom button onclick(From)
+function btn_srchDongCdFrom_onclick(obj:Button,  e:ClickEventInfo)
+{
+	if(edt_srchGuCd.value != null){
+		var guCd = edt_srchGuCd.value;
+		var rtn = gfnSearchDongCd(guCd);
+		
+		edt_srchAdstrdCdFrom.value = rtn.dongCd;
+		edt_srchAdstrdNmFrom.value = rtn.dongNm;
+		edt_srchAdstrdCdTo.value = rtn.dongCd;
+		edt_srchAdstrdNmTo.value = rtn.dongNm;
+		
+	}else{
+		alert("Please enter a region code.");
+	}
+}
+
+// srchDongCdTo button onclick(To)
+function btn_srchDongCdTo_onclick(obj:Button,  e:ClickEventInfo)
+{
+	if(edt_srchGuCd.value != null){
+	
+		var guCd = edt_srchGuCd.value;
+		var rtn = gfnSearchDongCd(guCd);
+		
+		if( rtn.dongCd < edt_srchAdstrdCdFrom.value ){
+			alert("Please check your area code.");
+			
+		}
+		else{
+			edt_srchAdstrdCdTo.value = rtn.dongCd;
+			edt_srchAdstrdNmTo.value = rtn.dongNm;
+		}
+	}
+	else{
+		alert("Please enter a region code.");
+	}
+}
+
+// excel button onclick
+function btn_excel_onclick(obj:Button,  e:ClickEventInfo)
+{
+	var FilePath;
+	
+	FilePath = excel_fileDialog.open("Save", FileDialog.SAVE);
+	gfnExportExcel("GridSample", "sheetA", FilePath.filename, FilePath.path);
+}
+
+// same checkBox onchanged
+function chk_same_onchanged(obj:CheckBox, e:CheckBoxChangeEventInfo)
+{
+	if(chk_same.value == "1"){
+		edt_hhldNm.value = edt_rcptNm.value;
+		msk_hhldIdttNo.value = msk_rcptIdttNo.value;
+	}
+	if(chk_same.value == "0"){
+		edt_hhldNm.value = "";
+		msk_hhldIdttNo.value = "";
+	}
+}
+
+// function callbacks 
+function fnCallback(svcid, errcd, errmsg)
+{
+	if(errcd < 0 ){
+	   alert(errmsg);
+	} 
+	else {
+		if(svcid == "searchList"){
+			var totcnt = ds_sample.rowcount;
+			sta_totcnt.text = totcnt;
+			msk_srchHhldIdttNo.mask = "######-#xxxxxx";
+			msk_srchRcptIdttNo.mask = "######-#xxxxxx";
+		}
+		if(svcid == "insertSample"){
+			alert("New information saved.");
+			chk_same.value == "N"
+			regAt_sampleRow.value = "N";
+ 			fnRowEditDisable();
+			if(edt_srchGuCd.value == null){
+				alert("Please enter your region code.");
+			}
+			else if (edt_srchAdstrdCdFrom.value == null || edt_srchAdstrdCdTo.value == null){
+				alert("Please check your area code.");
+			}
+			else{
+				search_sampleList();
+			}
+		}
+		if(svcid == "updateSample"){
+			alert("The information has been edited.");
+			
+			fnRowEditDisable();
+			
+			if(edt_srchGuCd.value == null){
+				alert("Please enter your region code.");
+			}
+			else if (edt_srchAdstrdCdFrom.value == null || edt_srchAdstrdCdTo.value == null){
+				alert("Please check your area code.");
+			}
+			else{
+				search_sampleList();
+			}
+		}
+		if(svcid == "updateCsInfo"){
+			alert("The information has been edited.");
+		}
+	}
+}
+
+function btn_myMenu_onclick(obj:Button,  e:ClickEventInfo)
+{
+	gfnSetMyMenu(this.name);
+}
+
+/**********************************************************************************
+ ★ description
+    Add or subtract months
+ ★ parameter 
+    1. sDate : date ( example : "20121122" )
+    2. nOffset : Add or subtract month ( example : 1 or -1 )
+ ★ return 
+    - success = yyyyMMdd type ( example : "20121202" or "20121022" )
+    - failure = ""
+**********************************************************************************/
+function AddMonth(sDate, nOffset)
+{
+	if( IsNull(sDate) || IsNull(nOffset) )		return "";
+	
+    var nYear = parseInt(sDate.substr(0, 4));
+    var nMonth = parseInt(sDate.substr(4, 2))+nOffset;
+    var nDate = parseInt(sDate.substr(6, 2));
+	var nLastDate, sRet;
+
+	sRet = MakeDate(nYear, nMonth, nDate);	
+	return sRet;
+}
+
+/*******************************************************************************
+ ★ description
+    Get today's date from this computers.
+ ★ parameter 
+ ★ return 
+    - success = yyyyMMdd type ( example : "20121122" )
+    - failure = ""
+******************************************************************************/ 
+function Today()
+{
+	var sToday = "";
+	var objDate = new Date();
+	var sToday  = objDate.getFullYear().toString();
+	sToday += Right("0" + (objDate.getMonth() + 1), 2);
+	sToday += Right("0" + objDate.getDate(), 2);
+
+	return sToday;
+}	
+
+/*******************************************************************************
+ ★ description
+    Number to Date
+ ★ parameter 
+    1. nYear : year ( example : "2012" )
+    2. nMonth : month ( example : "11" )
+    3. nDate : date ( example : "22" )
+ ★ return 
+    - success = yyyyMMdd type ( example : "20121122" )
+    - failure = ""
+******************************************************************************/ 
+function MakeDate(nYear, nMonth, nDate)
+{
+	if( IsNull(nYear) || IsNull(nMonth) || IsNull(nDate) )	return "";
+	
+    var objDate = new Date(nYear, nMonth-1, nDate);
+
+	var sYear   = objDate.getFullYear().toString();
+	var sMonth  = Right("0" + (objDate.getMonth() + 1), 2);
+	var sDate   = Right("0" + objDate.getDate(), 2);
+
+	return sYear + sMonth + sDate;
+}
+
+/*******************************************************************************
+ ★ description
+    Get the last day of month
+ ★ parameter 
+    1. sDate : yyyyMMdd type ( example : "20121122" )
+ ★ return 
+    - success = date ( example : "30" )
+    - failure = ""
+******************************************************************************/ 
+function LastDateNum(sDate)
+{
+    var nMonth, nLastDate;
+
+	if( IsNull(sDate) )		return -1;
+	
+	nMonth = parseInt(sDate.substr(4,2), 10);
+    if( nMonth == 1 || nMonth == 3 || nMonth == 5 || nMonth == 7  || nMonth == 8 || nMonth == 10 || nMonth == 12 )
+		nLastDate = 31;
+    else if( nMonth == 2 )  
+    {
+        if( IsLeapYear(sDate) == true )
+			nLastDate = 29;
+        else
+			nLastDate = 28;
+    } 
+    else 
+		nLastDate = 30;
+		
+	return nLastDate;
+}
+
+/*******************************************************************************
+ ★ description
+    Return substring from the right.
+ ★ Parameter 
+    1. sOrg   : Original String ( example : "aaBBbbcc" )
+    2. nSize  : size ( example : 2 )
+ ★ return 
+    - success = substring from the right. ( example : "cc" )
+    - failure = ""
+ ******************************************************************************/
+function Right(sOrg, nSize)
+{
+	if( IsNull(sOrg) || IsNull(nSize) )		return "";
+	
+	if( sOrg.length < nSize )
+		return sOrg;
+	else
+		return sOrg.substr(sOrg.length-nSize, nSize);
+}
+
+/*******************************************************************************
+ ★ description
+    Null check
+ ★ Parameter 
+    1. sValue : value ( example : null or undefined or "" or "abc" )
+ ★ return 
+    - If sValue is undefined, null, NaN, "", Array.length = 0, then return true
+    - Otherwise = false
+******************************************************************************/
+function IsNull(sValue)
+{
+	if( new String(sValue).valueOf() == "undefined") 
+		return true;
+	if( sValue == null )
+		return true;
+	if( ("x"+sValue == "xNaN") && ( new String(sValue.length).valueOf() == "undefined" ) )
+		return true;
+	if( sValue.length == 0 )
+		return true;
+	return false;
+}
+]]></Script>
+  </Form>
+</FDL>
